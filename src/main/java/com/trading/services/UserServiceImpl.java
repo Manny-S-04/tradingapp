@@ -20,11 +20,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User loginUser(String username, String password) {
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> d9a4afafb4804bcc369f95eb756b529bb6ddef00
 		return userRepository.login(username, password);
 	}
 
