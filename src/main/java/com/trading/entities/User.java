@@ -12,7 +12,9 @@ import lombok.Setter;
 
 @Entity
 @Table(name="user")
-@Getter @Setter @NoArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 public class User {
 
 	@Id
@@ -25,9 +27,8 @@ public class User {
 	@Column(name="password")
 	private String password;
 
-	public User(int userid, String username, String password) {
+	public User(String username, String password) {
 		super();
-		this.userid = userid;
 		this.username = username;
 		this.password = password;
 	}
