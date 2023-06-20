@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
+
+//Test
 @Entity
 @Table(name="user")
 @Data
