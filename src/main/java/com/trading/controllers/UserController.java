@@ -32,7 +32,7 @@ public class UserController {
 	@PostMapping("/register")
 	public String register(@RequestParam("username") String username, @RequestParam("password") String password) {
 
-		User userExists = userService.findEmail(username);
+		User userExists = userService.userExist(username);
 
 		if (userExists == null) {
 
@@ -64,7 +64,7 @@ public class UserController {
 
 		if (authenticatedUser != null) {
 			session.setAttribute("loggedinuser", authenticatedUser);
-			session.setAttribute("username", authenticatedUser.
+			//session.setAttribute("username", authenticatedUser. GETTER GOES HERE
 
 			return "redirect:/userdetails";
 		} else {
