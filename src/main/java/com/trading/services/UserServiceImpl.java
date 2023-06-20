@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User loginUser(String username, String password) {
 		
-		return userRepository.loginProcess(username, password);
+		return userRepository.login(username, password);
 	}
 
 	@Override
