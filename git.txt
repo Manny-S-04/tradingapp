@@ -1,0 +1,100 @@
+List of commands:
+
+1) git --config --list --show-origin
+> view all config settings such as username and email
+> remove --show-origin to view all the settings
+
+2) git --config --global user.name "username"
+.. git --config --global user.email email
+> Only need to do this once if you pass the global option
+
+3) git config --global init.defaultBranch main
+> sets 'main' as the default branch name
+
+4) cd .../project_directory
+> change directory to git project
+
+5) git init
+> Initialised an empty git repo .../project_directory/.git
+> Contains all of the necessary repo files => git repo skeleton
+
+6) git add *.[file_extension]
+> for example git add *.py will add all python files
+
+7) git add LICENSE
+> 
+
+8) git commit -m 'Initial project version'
+> -m is the repo commit message
+> put a -a after to skip the git add bit
+**********************************************
+
+9) git clone "url" </target directory location>
+> You want to clone a git repo when you want to contribute towards it
+> Creates a directory and initializes a .git inside it and pulls down all the data and checks out a copy of a l
+
+10) git status (-s)
+> nothing to commit, working tree clean => no edits have been made
+
+11) echo 'My project' > README
+> git status shows that the README file is 'untracked' because it wasnt present in the previous commit
+> you can start tracking this file using git add <file>
+> running git status shows that the README file is tracked and staged to be committed
+> tracked files will be committed the next time you commit
+> files that are changed even after being added will be moved to the untracked section
+
+12) cat .gitignore
+... *.[oa]
+... *~
+> *.[oa] tells git to ignore files ending in .o or .a
+> *~ tells git to ignore all files whose names end with a ~ (such as temp or log file)
+> 
+
+The rules for the patterns you can put in the .gitignore file are as follows:
+
+    Blank lines or lines starting with # are ignored.
+
+    Standard glob patterns work, and will be applied recursively throughout the entire working tree.
+
+    You can start patterns with a forward slash (/) to avoid recursivity.
+
+    You can end patterns with a forward slash (/) to specify a directory.
+
+    You can negate a pattern by starting it with an exclamation point (!).
+
+
+13) git diff
+> like git status but shows exact lines added or removed from files
+
+14) rm <file>
+> rm removes the file from the tracked section
+> do a commit to remove it from the 
+
+
+
+15) git remote add tradingapp https://github.com/Manny-S-04/tradingapp.git
+> Creating a new remote git on my github account (so that they can host it) giving it the name "tradingapp"
+
+
+16) git remote -v
+> shows the urls
+
+17) git remote rm <name>
+> Removes the git directory
+
+18) Go to github.com and developer settings, in the left side bar click generate token
+> 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
+> use this as login when cloning a remote git
+
+19) git clone <github url>
+> clones the guthub to the working directory
+
+20) git push -u -f <name like origin (remote add name)> <branch : master, main etc...>
+> Pushes the code from the working local directory to the github
+
+21) git branch -D <branch name> 
+> deletes local branch
+
+22) git checkout -b main
+> creates and switches to a local main branch
+> now if you push to main it will work
