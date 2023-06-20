@@ -11,7 +11,6 @@ public interface UserService {
 
 	public User loginUser(String username, String password);
 
-	@Query("SELECT u FROM User u WHERE u.email = :email")
-	public User findEmail(@Param("email") String email); //to be used when to search if a user already exists when registering 
+	public User userExist(@Param("username") String username); //to be used when to search if a user already exists when registering 
 
 }
