@@ -1,12 +1,16 @@
 package com.trading.services;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 import com.trading.entities.User;
 import com.trading.repositories.UserRepository;
+
 
 
 
@@ -16,6 +20,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
+
 
 	
 	@Override
@@ -30,5 +35,14 @@ public class UserServiceImpl implements UserService {
 		
 		return userRepository.loginProcess(username, password);
 	}
+
+	@Override
+	public User findUsername(String username) {
+		
+		return userRepository.findUsername(username);
+	}
+	
+	
+
 
 }
