@@ -1,30 +1,37 @@
 package com.trading.entities;
 
-import java.util.List;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "sort")
+@Table(name="user")
 @Getter @Setter @NoArgsConstructor
-public class Sort {
-	
+public class User {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int sortid;
+	private int userid;
 	
-	@OneToMany(mappedBy = "exchangeId")
-	private List<Exchange> exchanges;
+	@Column(name="username")
+	private String username;
 	
-	@OneToMany(mappedBy = "orderBookId")
-	private List<OrderBook> orderBooks;
+	@Column(name="password")
+	private String password;
 
+	public User(int userid, String username, String password) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.password = password;
+	}
+	
+	
+	
 }
