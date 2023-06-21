@@ -13,11 +13,11 @@ import lombok.Setter;
 
 
 
-//Test
-// Test
+
 @Entity
 @Table(name="user")
-@Data
+@Getter
+@Setter
 public class User {
 
 	@Id
