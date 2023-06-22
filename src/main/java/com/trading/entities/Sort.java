@@ -14,7 +14,7 @@ public class Sort {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int sortid;
+	private int sortId;
 	
 	@OneToMany(mappedBy = "exchangeId")
 	private List<Exchange> exchanges;
