@@ -1,9 +1,7 @@
 package com.trading.services;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
 import com.trading.entities.User;
+import org.springframework.data.repository.query.Param;
 
 public interface UserService {
 
