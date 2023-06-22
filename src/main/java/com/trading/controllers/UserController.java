@@ -1,16 +1,17 @@
 package com.trading.controllers;
 
+import com.trading.entities.User;
+import com.trading.services.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.trading.entities.User;
-import com.trading.services.*;
 
-import jakarta.servlet.http.HttpSession;
-
+@Controller
 public class UserController {
 	
 	@Autowired
@@ -32,7 +33,7 @@ public class UserController {
 	@PostMapping("/register")
 	public String register(@RequestParam("username") String username, @RequestParam("password") String password) {
 
-		User userExists = userService.findEmail(username);
+		User userExists = userService.userExist(username);
 
 		if (userExists == null) {
 
@@ -64,7 +65,7 @@ public class UserController {
 
 		if (authenticatedUser != null) {
 			session.setAttribute("loggedinuser", authenticatedUser);
-			session.setAttribute("username", authenticatedUser.
+			//session.setAttribute("username", authenticatedUser. GETTER GOES HERE
 
 			return "redirect:/userdetails";
 		} else {
