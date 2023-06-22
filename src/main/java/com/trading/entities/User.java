@@ -9,8 +9,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="user")
-@Getter
-@Setter
+
 public class User {
 
 	@Id
@@ -22,10 +21,36 @@ public class User {
 	
 	@Column(name="password")
 	private String password;
+	
+	public User() {}
 
 	public User(String username, String password) {
 		super();
 		this.username = username;
+		this.password = password;
+	}
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	

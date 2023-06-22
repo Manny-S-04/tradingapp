@@ -16,7 +16,7 @@ public class Exchange {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int exchangeId;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "exchange")
 	private List<OrderBook> orderBooks;
 	
 	@Column(name = "fee")
@@ -25,7 +25,7 @@ public class Exchange {
 	@Column(name="totalvalue")
 	private double totalValue;
 	
-	@ManyToOne
+    @ManyToOne
 	private Sort sort;
 
 	public Exchange(int exchangeId, List<OrderBook> orderBooks, double fee, double totalValue, Sort sort) {

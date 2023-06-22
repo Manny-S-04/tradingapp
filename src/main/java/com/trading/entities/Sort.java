@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "sort")
+//@Table(name = "sort")
 @Getter @Setter @NoArgsConstructor
 public class Sort {
 	
@@ -16,10 +16,10 @@ public class Sort {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int sortId;
 	
-	@OneToMany(mappedBy = "exchangeId")
+	@OneToMany(mappedBy = "sort")
 	private List<Exchange> exchanges;
 	
-	@OneToMany(mappedBy = "orderBookId")
+	@OneToMany(mappedBy = "sort")
 	private List<OrderBook> orderBooks;
 
 }

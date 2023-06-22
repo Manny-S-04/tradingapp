@@ -6,15 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 @Getter @Setter @NoArgsConstructor
 public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@ManyToOne
-	@JoinColumn(name="orderbook")
+	
+	
 	private int orderId;
+	
+	@ManyToOne
+	@JoinColumn (name= "order_book_id")
+	private OrderBook orderBookId;
 	
 	@Column(name="order_type")
 	private String orderType;

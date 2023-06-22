@@ -1,10 +1,10 @@
 package com.trading.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.trading.entities.Order;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud.Order;
-import com.trading.entities.User;
-
+@Repository
 public interface OrderRepository extends JpaRepository<Order, Integer>{
 
 }
