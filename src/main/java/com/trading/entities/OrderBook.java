@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "orderbook")
+//@Table(name = "orderbook")
 @Getter @Setter @NoArgsConstructor
 public class OrderBook {
 	
@@ -16,7 +16,7 @@ public class OrderBook {
 	@GeneratedValue
 	private int orderBookId;
 	
-	@OneToMany(mappedBy = "orderid")
+	@OneToMany(mappedBy = "orderBookId")
 	private List<Order> orders;
 	
 	@ManyToOne
@@ -29,8 +29,8 @@ public class OrderBook {
 		super();
 		this.orderBookId = orderBookId;
 		this.orders = orders;
-		this.exchange = exchange;
-		this.sort = sort;
+		//this.exchange = exchange;
+		//this.sort = sort;
 	}
 	
 	

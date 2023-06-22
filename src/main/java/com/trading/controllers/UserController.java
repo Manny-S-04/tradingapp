@@ -59,12 +59,14 @@ public class UserController {
 
 	@PostMapping("/login")
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
-			HttpSession session, Model model) {
+			HttpSession session) {
+		
 		
 		User authenticatedUser = userService.loginUser(username, password);
 
 		if (authenticatedUser != null) {
-			session.setAttribute("loggedinuser", authenticatedUser);
+			session.setAttribute("username", authenticatedUser.getUsername());
+			session.setAttribute("password", authenticatedUser.getPassword());
 			//session.setAttribute("username", authenticatedUser. GETTER GOES HERE
 
 			return "redirect:/userdetails";
