@@ -13,22 +13,22 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class OrderController {
 	
-	@Autowired
-	UserService userService;
-	
-	@Autowired
-	OrderService orderService;
-	
-	@GetMapping("/getorders")
-	public String getOrders(HttpSession session) {		
-		
-		User loggedinUser = (User) session.getAttribute("username");
-		
-		if (loggedinUser != null) {
-			
-			
-			
-		}
-	}
+//	@Autowired
+//	UserService userService;
+//	
+//	@Autowired
+//	OrderService orderService;
+//	
+//	@GetMapping("/getorders")
+//	public String getOrders(HttpSession session) {		
+//		
+//		User loggedinUser = (User) session.getAttribute("username");
+//		
+//		if (loggedinUser != null) {
+//			
+//			
+//			
+//		}
+//	}
 
 }

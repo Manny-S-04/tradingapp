@@ -7,5 +7,7 @@ import com.trading.entities.OrderBook;
 import com.trading.entities.User;
 @Repository
 public interface OrderBookRepository extends JpaRepository<OrderBook, Integer>{
+	
+	
 
 }
