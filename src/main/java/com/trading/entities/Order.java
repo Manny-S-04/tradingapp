@@ -15,6 +15,10 @@ public class Order {
 	private int orderId;
 	
 	@ManyToOne
+	@JoinColumn (name= "userid")
+	private User userId;
+	
+	@ManyToOne
 	@JoinColumn (name= "order_book_id")
 	private OrderBook orderBookId;
 	
