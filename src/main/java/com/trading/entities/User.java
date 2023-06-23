@@ -1,5 +1,7 @@
 package com.trading.entities;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +16,10 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userid;
+	private int userId;
+	
+	@OneToMany(mappedBy = "userId")
+	private List<Order> orders;
 	
 	@Column(name="username")
 	private String username;
@@ -31,11 +36,11 @@ public class User {
 	}
 
 	public int getUserid() {
-		return userid;
+		return userId;
 	}
 
 	public void setUserid(int userid) {
-		this.userid = userid;
+		this.userId = userid;
 	}
 
 	public String getUsername() {
