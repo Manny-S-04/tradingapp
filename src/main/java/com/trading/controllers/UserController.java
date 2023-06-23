@@ -1,21 +1,26 @@
 package com.trading.controllers;
 
-import com.trading.entities.User;
-import com.trading.services.UserService;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.trading.entities.User;
+import com.trading.services.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
+
+	@GetMapping("/")
+	public String empty() {
+		return "home";
+	}
 
 	@GetMapping("/home")
 	public String home() {
@@ -44,12 +49,10 @@ public class UserController {
 			} else {
 				return "error";
 			}
-		}else {
+		} else {
 			return "registerfail";
 		}
-		
-		
-		
+
 	}
 
 	@GetMapping("/login")
@@ -60,14 +63,13 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
 			HttpSession session) {
-		
-		
+
 		User authenticatedUser = userService.loginUser(username, password);
 
 		if (authenticatedUser != null) {
 			session.setAttribute("username", authenticatedUser.getUsername());
 			session.setAttribute("password", authenticatedUser.getPassword());
-			//session.setAttribute("username", authenticatedUser. GETTER GOES HERE
+			// session.setAttribute("username", authenticatedUser. GETTER GOES HERE
 
 			return "redirect:/userdetails";
 		} else {

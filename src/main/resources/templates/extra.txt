@@ -1,0 +1,10 @@
+<h1>Hello world</h1>
+    <header class="header">
+        <div class="container fluid">
+            <button type="button">Account Details</button>
+            <button type="button">Chart</button>
+            <button type="button">News</button>
+            <button type="button">Contact Us</button>
+            <button type="button">Login</button>
+        </div>
+    </header>
