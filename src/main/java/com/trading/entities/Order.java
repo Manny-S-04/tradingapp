@@ -21,17 +21,21 @@ public class Order {
 	@Column(name="order_type")
 	private String orderType;
 	
+	@Column(name="status")
+	private String status;
+	
 	@Column(name="stock")
 	private String stock;
 	
 	@Column(name="price")
 	private double price;
 
-	public Order(String orderType, String stock, double price) {
+	public Order(String orderType, String stock, double price, String status) {
 		super();
 		this.orderType = orderType;
 		this.stock = stock;
 		this.price = price;
+		this.status = status;
 	}
 	
 	
