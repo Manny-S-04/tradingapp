@@ -16,7 +16,7 @@ public class Order {
 	
 	@ManyToOne
 	@JoinColumn (name= "userid")
-	private User userId;
+	private User userid;
 	
 	@ManyToOne
 	@JoinColumn (name= "order_book_id")

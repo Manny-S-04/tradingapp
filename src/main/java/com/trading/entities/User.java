@@ -16,9 +16,10 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
+	@Column(name="userid")
+	private int userid;
 	
-	@OneToMany(mappedBy = "userId")
+	@OneToMany(mappedBy = "userid")
 	private List<Order> orders;
 	
 	@Column(name="username")
@@ -36,11 +37,11 @@ public class User {
 	}
 
 	public int getUserid() {
-		return userId;
+		return userid;
 	}
 
 	public void setUserid(int userid) {
-		this.userId = userid;
+		this.userid = userid;
 	}
 
 	public String getUsername() {
