@@ -11,15 +11,15 @@ import com.trading.entities.Order;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer>{
 	
-@Query("SELECT o FROM Order o JOIN User u ON o.userid = u.userid WHERE o.status = 'partial' AND u.userid = :userid")
-public List<Order> partialOrders(@Param("userid") int userid);
+//@Query("SELECT o FROM Order o JOIN User u ON o.userid = u.userid WHERE o.status = 'partial' AND u.userid = :userid")
+//public List<Order> partialOrders(@Param("userid") int userid);
+//
+//
+//@Query("SELECT * FROM Order o JOIN User u ON o.userid = u.userid WHERE o.status = 'filled' AND u.userid = :userid")
+//public List<Order> filledOrders(@Param("userid") int userid);
 
-
-@Query("SELECT o FROM Order o JOIN User u ON o.userid = u.userid WHERE o.status = 'filled' AND u.userid = :userid")
-public List<Order> filledOrders(@Param("userid") int userid);
-
-@Query("DELETE FROM Order o JOIN User u ON o.userid = u.userid WHERE o.status = 'partial' AND u.userid = :userid")
-public void deleteOrder(@Param("userid") int userid);
+//@Query("DELETE * FROM Order JOIN User u ON o.userid = u.userid WHERE o.status = 'partial' AND u.userid = :userid")
+//public void deleteOrder(@Param("userid") int userid);
 
 
 
