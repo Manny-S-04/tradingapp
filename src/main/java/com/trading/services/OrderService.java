@@ -10,9 +10,18 @@ public interface OrderService {
 	
 	public Order saveOrder(Order order);
 	
-	public List<Order> partialOrders(int userid);
-	public List<Order> filledOrders(int userid);
 	
-	public void deleteOrder(int userid);
+	
+
+
+
+	void delete(Order order);
+
+
+
+
+
+
+	
 
 }

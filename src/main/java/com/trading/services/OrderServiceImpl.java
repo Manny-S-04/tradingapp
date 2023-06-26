@@ -20,33 +20,31 @@ public class OrderServiceImpl implements OrderService {
 		
 		return orderRepository.save(order);
 	}
-
-
-
-
-	@Override
-	public List<Order> partialOrders(int userid) {
-		return orderRepository.partialOrders(userid);
-	}
-
 	
 	
 
 
 
+
+
+
+	
 	@Override
-	public List<Order> filledOrders(int userid) {
-		return orderRepository.filledOrders(userid);
+	public void delete(Order order) {
+		orderRepository.delete(order);
 	}
 
 
 
 
-	@Override
-	public void deleteOrder(int userid) {
-		orderRepository.deleteOrder(userid);
-		
-	}
+
+
+	
+	
+	
+	
+
+
 
 
 
