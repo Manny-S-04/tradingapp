@@ -19,6 +19,13 @@ public class OrderServiceImpl implements OrderService {
 		// TODO Auto-generated method stub
 		return orderRepository.findOrders(userid);
 	}
+
+	
+	@Override
+	public Order saveOrder(Order order) {
+		
+		return orderRepository.save(order);
+	}
 	
 	
 

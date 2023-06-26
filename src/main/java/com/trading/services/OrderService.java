@@ -8,7 +8,9 @@ import com.trading.entities.Order;
 
 @Service
 public interface OrderService {
-	
+
 	public List<Order> findOrders(int userid);
 
+	public Order saveOrder(Order order);
+	
 }
