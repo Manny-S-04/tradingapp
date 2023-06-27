@@ -15,11 +15,25 @@ public class ExchangeController {
 	
 	
 	
-	@GetMapping("/exchange1")
-	public String exchange() {
+	@GetMapping("/lse")
+	public String exchange1() {
 
-		return "exchange1";
+		return "lse";
 	}
+	
+	@GetMapping("/nyse")
+	public String exchange2() {
+
+		return "nyse";
+	}
+	
+	@GetMapping("/tse")
+	public String exchange3() {
+
+		return "tse";
+	}
+
+
 
 
 }
