@@ -6,6 +6,8 @@ public interface OrderBookService {
 	
 	public OrderBook allorderBooks();
 
+	public int findOrderBookId();
+
 	
 
 }
