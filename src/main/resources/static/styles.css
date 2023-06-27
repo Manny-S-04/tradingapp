@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.alice-color {
+	
+	background-color: #0E0741 !important;
+}
+
+.nav-pills {
+	width: 1000px;
+	margin-top: 50px;
+	margin-left: 390px;
+}
+
+.nav-pills .nav-link.active {
+	background-color: #8236FD;
+
+  }
+
+.nav-link{ 
+	color: #FFFFFF;
+	
+
+}
+
+.navbar-nav .nav-link.active{
+	color:#FFFFFF;
+}
+
+.navbar-brand{
+	color:#FFFFFF;
+}
+
+
