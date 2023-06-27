@@ -16,4 +16,10 @@ public class OrderBookServiceImpl implements OrderBookService {
 		return (OrderBook) orderBookRepository.findAll();
 	}
 
+	@Override
+	public int findOrderBookId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
