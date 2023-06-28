@@ -73,7 +73,7 @@ public class UserController {
 
 			return "redirect:/userdetails";
 		} else {
-			return "greeting";
+			return "login";
 		}
 	}
 
