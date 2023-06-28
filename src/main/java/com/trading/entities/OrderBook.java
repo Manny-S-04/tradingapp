@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "orderbook")
+@Table(name = "order_book")
 public class OrderBook {
 	
 	@Id

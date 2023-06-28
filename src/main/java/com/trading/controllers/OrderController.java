@@ -1,5 +1,6 @@
 package com.trading.controllers;
 
+import java.security.PublicKey;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +25,14 @@ public class OrderController {
 
 	@Autowired
 	OrderService orderService;
-	
+
 	@Autowired
 	OrderBookService orderBookService;
 
 	@GetMapping("/getorders")
 	public String getOrders(HttpSession session) {
 
-		User loggedinUser = (User) session.getAttribute("username");
+		User loggedinUser = (User) session.getAttribute("loggedinuser");
 
 		if (loggedinUser != null) {
 
@@ -70,8 +71,24 @@ public class OrderController {
 			return "login";
 			
 		}
+	}
+
+	@GetMapping("/createorder")
+	public String getCreateOrder(HttpSession session) {
+
+		User loggedinUser = (User) session.getAttribute("username");
+
+		if (loggedinUser != null) {
+			
+			return "createorder";
+		}else {
+			
+			return "login";
+			
+		}
 
 	
-}
-	
+
+	}
+
 }

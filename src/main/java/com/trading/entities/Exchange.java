@@ -27,6 +27,8 @@ public class Exchange {
 	
     @ManyToOne
 	private Sort sort;
+    
+    public Exchange() {}
 
 	public Exchange(int exchangeId, List<OrderBook> orderBooks, double fee, double totalValue, Sort sort) {
 		super();

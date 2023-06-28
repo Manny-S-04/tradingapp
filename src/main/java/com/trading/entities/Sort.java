@@ -21,5 +21,16 @@ public class Sort {
 	
 	@OneToMany(mappedBy = "sort")
 	private List<OrderBook> orderBooks;
+	
+	public Sort() {}
+
+	public Sort(int sortId, List<Exchange> exchanges, List<OrderBook> orderBooks) {
+		super();
+		this.sortId = sortId;
+		this.exchanges = exchanges;
+		this.orderBooks = orderBooks;
+	}
+	
+	
 
 }
