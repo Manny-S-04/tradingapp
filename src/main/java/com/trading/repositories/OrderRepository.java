@@ -11,8 +11,9 @@ import com.trading.entities.Order;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer>{
 
-@Query(value = "SELECT * FROM orders o JOIN user u ON o.userid = u.userid WHERE u.userid = ?", nativeQuery = true)
-public List<Order> findOrders(int userid);
+	@Query(value = "SELECT o.* FROM orders o INNER JOIN user u ON o.userid = u.userid WHERE u.userid = ?", nativeQuery = true)
+	public List<Order> findOrders(int userid);
+
 
  
 

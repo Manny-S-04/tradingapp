@@ -56,17 +56,24 @@ public class UserController {
 	}
 
 	@GetMapping("/login")
-	public String showLoginForm() {
+	public String showLoginForm(HttpSession session) {
+		
+		User loggedinUser = (User) session.getAttribute("loggedinuser");
+		if (loggedinUser != null) {
+			return "userdetails";
+		}else {
 		return "login";
+	}
 	}
 
 	@PostMapping("/login")
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
 			HttpSession session) {
-
+			
 		User authenticatedUser = userService.loginUser(username, password);
 
 		if (authenticatedUser != null) {
+			session.setAttribute("loggedinuser", authenticatedUser);
 			session.setAttribute("username", authenticatedUser.getUsername());
 			session.setAttribute("password", authenticatedUser.getPassword());
 			// session.setAttribute("username", authenticatedUser. GETTER GOES HERE
