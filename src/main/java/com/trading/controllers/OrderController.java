@@ -48,7 +48,7 @@ public class OrderController {
 	}
 
 	@PostMapping("/createorder")
-	public void createOrder(HttpSession session, @RequestParam("ordertype") String orderType, @RequestParam("status") String status, @RequestParam("stock") String stock,
+	public String createOrder(HttpSession session, @RequestParam("ordertype") String orderType, @RequestParam("status") String status, @RequestParam("stock") String stock,
 			@RequestParam("price") double price) {
 		
 		User loggedinUser = (User) session.getAttribute("username");
@@ -57,15 +57,18 @@ public class OrderController {
 			
 			int userid = loggedinUser.getUserid();
 			
-			int orderbookid = orderBookService.findOrderBookId();
+			int orderbookid = orderBookService.findOrderBookId(); 
 								
 			Order order = new Order(userid, orderbookid, orderType, status, stock, price);
 		
-			// redirect to createorderpage
+			orderService.saveOrder(order);
+			
+			return "redirect:/createorder";
 		
 		}else {
 			
-			// return login page
+			return "login";
+			
 		}
 
 	

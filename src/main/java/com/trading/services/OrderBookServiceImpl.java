@@ -1,10 +1,13 @@
 package com.trading.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.trading.entities.OrderBook;
 import com.trading.repositories.OrderBookRepository;
 
+
+@Service
 public class OrderBookServiceImpl implements OrderBookService {
 	
 	@Autowired
