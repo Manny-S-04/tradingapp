@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -7,27 +7,31 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        [class*="col"] {
-            padding: 1rem;
-            background-color: #33b5e5;
-            border: 0px solid #fff;
-            color: #fff;
-        }
-    </style>
+
     <title>Create Order</title>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col text-center"> <button type="button" class="btn btn-primary"> Account Details </button></div>
-            <div class="col text-center"> <button type="button" class="btn btn-primary"> Chart</button></div>
-            <div class="col text-center"> <button type="button" class="btn btn-primary"> News </button></div>
-            <div class="col text-center"> <button type="button" class="btn btn-primary"> Contact Us </button></div>
-            <div class="col text-center"> <button type="button" class="btn btn-primary"> Login/Register </button></div>
-        </div>
-    </div>
+   <div th:replace="navbar.html"></div>
+	
+    <form method="POST" action="/createorder">
+        <label for="ordertype">Order Type:</label>
+        <input type="text" name="ordertype" id="ordertype" required><br>
+        
+        <label for="status">Status:</label>
+        <input type="text" name="status" id="status" required><br>
+        
+        <label for="stock">Stock:</label>
+        <input type="text" name="stock" id="stock" required><br>
+        
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" step="0.01" required><br>
+        
+        <input type="submit" value="Create Order">
+    </form>
+
+        
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
