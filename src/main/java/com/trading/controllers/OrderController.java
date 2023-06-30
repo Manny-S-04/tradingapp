@@ -52,7 +52,7 @@ public class OrderController {
 	public String createOrder(HttpSession session, @RequestParam("ordertype") String orderType, @RequestParam("status") String status, @RequestParam("stock") String stock,
 			@RequestParam("price") double price) {
 		
-		User loggedinUser = (User) session.getAttribute("username");
+		User loggedinUser = (User) session.getAttribute("loggedinuser");
 		
 		if (loggedinUser != null) {
 			
@@ -76,7 +76,7 @@ public class OrderController {
 	@GetMapping("/createorder")
 	public String getCreateOrder(HttpSession session) {
 
-		User loggedinUser = (User) session.getAttribute("username");
+		User loggedinUser = (User) session.getAttribute("loggedinuser");
 
 		if (loggedinUser != null) {
 			

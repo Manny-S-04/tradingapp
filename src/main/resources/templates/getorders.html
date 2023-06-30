@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Get Orders</title>
 </head>
 <body>
@@ -9,6 +9,9 @@
 
 <div th:each="orders : ${session.listoforders}">
 	<div th:text="${orders.price}"></div>
+	<div th:text="${orders.status}"></div>
+	<div th:text="${orders.stock}"></div>
+	<div th:text="${orders.orderType}"></div>
 </div>
 </body>
 </html>
