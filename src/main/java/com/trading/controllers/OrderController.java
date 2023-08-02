@@ -1,7 +1,10 @@
 package com.trading.controllers;
 
-import java.security.PublicKey;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,8 @@ import com.trading.services.OrderService;
 import com.trading.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
+import yahoofinance.Stock;
+import yahoofinance.YahooFinance;
 
 @Controller
 public class OrderController {
@@ -87,8 +92,22 @@ public class OrderController {
 			
 		}
 
-	
-
 	}
+	
+	@GetMapping("/getstockprice")
+	public Map<String, Object> getStockPrice() throws IOException {
 
+		Stock stock = YahooFinance.get("TSLA");
+		
+		BigDecimal price = stock.getQuote().getPrice();
+		
+		String name = stock.getName();
+		
+		Map<String, Object> response = new HashMap<>();
+	    response.put("name", name);
+	    response.put("price", price);
+
+	    return response;
 }
+	
+	}
